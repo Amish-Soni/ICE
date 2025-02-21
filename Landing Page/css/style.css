@@ -1,0 +1,623 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  color: #1a2f3f;
+  background-color: #f2f2f2;
+}
+
+.outer-container {
+  width: 85%;
+  padding: 20px 0;
+  .home-container {
+    background-color: #1a2f3f;
+    padding: 30px 30px 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+    .header-and-main-container {
+      background-color: #f2f2f2;
+      border-radius: 16px;
+      .header {
+        background-color: #fff;
+        padding: 15px 60px;
+        border-radius: 16px;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+        .header-section1 {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 0 10px 0;
+          h2 {
+            font-size: 36px;
+          }
+          h4 {
+            font-size: 20px;
+          }
+        }
+        .header-section2 {
+          display: flex;
+          flex-direction: column;
+          div {
+            display: flex;
+            justify-content: space-between;
+          }
+          span::before {
+            content: "\25A0 ";
+            color: #f4b400;
+            margin: 0 10px 0 0;
+            font-size: 25px;
+          }
+        }
+      }
+      .main {
+        padding: 20px 60px 40px;
+        .search-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 0;
+          h3 {
+            font-size: 34px;
+            font-weight: bold;
+            color: #1a2f3f;
+            margin-bottom: 20px;
+          }
+          .custom-dropdown {
+            position: relative;
+            display: inline-block;
+            width: 350px;
+            .dropdown-btn {
+              width: 100%;
+              background-color: #1a2f3f; /* Dark navy blue */
+              color: #6c7983; /* Grayish text */
+              padding: 15px;
+              font-size: 18px;
+              font-weight: bold;
+              border: none;
+              border-radius: 8px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              cursor: pointer;
+              p {
+                width: 100%;
+                text-align: center;
+              }
+            }
+            .dropdown-btn.selected {
+              color: #ffd700;
+            }
+
+            .dropdown-btn .arrow {
+              font-size: 18px;
+              color: #ffd700;
+            }
+            .dropdown-list {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              background-color: #bfc4c9; /* Light gray */
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              border-radius: 0 0 8px 8px;
+              display: none;
+              overflow: hidden;
+              .dropdown-item {
+                padding: 12px;
+                font-size: 18px;
+                text-align: center;
+                color: #13293d; /* Dark blue */
+                cursor: pointer;
+                border-top: 1px solid white;
+              }
+              .dropdown-item:first-child {
+                border-top: none;
+              }
+            }
+          }
+          .custom-dropdown.active .dropdown-list {
+            display: block;
+          }
+          .custom-dropdown.active .dropdown-btn {
+            border-radius: 8px 8px 0 0;
+          }
+        }
+
+        .table-container {
+          background-color: #fff;
+          .responsive-table {
+            width: 100%;
+            th,
+            td {
+              padding: 12px;
+              text-align: center;
+            }
+
+            th {
+              background: #c7deff;
+              /* justify-content: space-between; */
+            }
+
+            td[data-label="Application Form"] a {
+              display: inline-block;
+              background: #007bff;
+              color: white;
+              padding: 5px 10px;
+              text-decoration: none;
+              border-radius: 4px;
+              text-align: center;
+            }
+
+            td[data-label="Application Form"] a:hover {
+              background: #0056b3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about-container {
+    margin-top: 30px;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+    padding: 25px;
+    .header {
+      border: 1px solid #a5a5a5;
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .content {
+      padding: 30px;
+      text-align: justify;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .outer-container {
+    width: 95%;
+    padding: 15px 0;
+    .home-container {
+      padding: 20px 20px 40px 20px;
+      .header-and-main-container {
+        .header {
+          padding: 15px 30px;
+          .header-section1 {
+            margin: 0 0 10px 0;
+            h2 {
+              font-size: 30px;
+            }
+            h4 {
+              font-size: 18px;
+            }
+          }
+          .header-section2 {
+            flex-direction: column;
+            div {
+              flex-direction: column;
+              font-size: 15px;
+            }
+            span::before {
+              margin: 0 10px 0 0;
+              font-size: 23px;
+            }
+          }
+        }
+        .main {
+          padding: 10px 20px 30px;
+          .search-container {
+            padding: 30px 0;
+            h3 {
+              font-size: 28px;
+              margin-bottom: 15px;
+            }
+            .custom-dropdown {
+              width: 300px;
+              .dropdown-btn {
+                padding: 12px;
+                font-size: 16px;
+                p {
+                  width: 100%;
+                  font-size: 15px;
+                  text-align: center;
+                }
+              }
+              .dropdown-btn .arrow {
+                font-size: 18px;
+              }
+              .dropdown-list {
+                .dropdown-item {
+                  padding: 10px;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+          .table-container {
+            .responsive-table {
+              width: 100%;
+              font-size: 15px;
+              th,
+              td {
+                padding: 5px 8px;
+                text-align: center;
+              }
+
+              td[data-label="Application Form"] a {
+                padding: 4px 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .about-container {
+      margin-top: 20px;
+      padding: 20px;
+      .header {
+        padding: 15px;
+        h3 {
+          font-size: 18px;
+        }
+      }
+      .content {
+        padding: 20px;
+        text-align: justify;
+        ul {
+          li {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .outer-container {
+    width: 95%;
+    padding: 10px;
+    .home-container {
+      padding: 20px 20px 20px 20px;
+      .header-and-main-container {
+        .header {
+          padding: 15px 15px;
+          .header-section1 {
+            margin: 0 0 15px 0;
+            h2 {
+              font-size: 18px;
+            }
+            h4 {
+              font-size: 14px;
+            }
+          }
+          .header-section2 {
+            flex-direction: column;
+            div {
+              flex-direction: column;
+              font-size: 14px;
+            }
+            span::before {
+              margin: 0 5px 0 0;
+              font-size: 15px;
+            }
+          }
+        }
+        .main {
+          padding: 5px 10px 15px;
+          .search-container {
+            padding: 15px 0;
+            h3 {
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+            .custom-dropdown {
+              width: 250px;
+              .dropdown-btn {
+                padding: 10px;
+                font-size: 14px;
+                p {
+                  width: 100%;
+                  font-size: 14px;
+                  text-align: center;
+                }
+              }
+              .dropdown-btn .arrow {
+                font-size: 16px;
+              }
+              .dropdown-list {
+                .dropdown-item {
+                  padding: 8px;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+
+          .table-container {
+            .responsive-table {
+              width: 100%;
+              font-size: 15px;
+              th,
+              td {
+                padding: 5px 8px;
+                text-align: center;
+              }
+
+              td[data-label="Application Form"] a {
+                padding: 5px;
+                height: 100%;
+              }
+            }
+            .responsive-table th:nth-child(1),
+            .responsive-table td:nth-child(1) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(2),
+            .responsive-table td:nth-child(2) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(3),
+            .responsive-table td:nth-child(3) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(4),
+            .responsive-table td:nth-child(4) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(5),
+            .responsive-table td:nth-child(5) {
+              width: 95%;
+              text-align: right;
+            }
+            .responsive-table thead {
+              display: none;
+            }
+
+            .responsive-table tbody {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            }
+
+            .responsive-table tr {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              padding: 10px;
+              background: #fff;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .responsive-table td {
+              display: flex;
+              justify-content: space-between;
+              border: none;
+              padding: 8px 0;
+              text-align: right;
+            }
+
+            .responsive-table td::before {
+              content: attr(data-label);
+              font-weight: bold;
+              flex-basis: 50%;
+              text-align: left;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+
+    .about-container {
+      margin-top: 10px;
+      padding: 10px;
+      .header {
+        padding: 10px;
+        h3 {
+          font-size: 15px;
+        }
+      }
+      .content {
+        padding: 10px;
+        text-align: justify;
+        ul {
+          li {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .outer-container {
+    width: 100%;
+    padding: 0px;
+    .home-container {
+      padding: 10px 10px 10px 10px;
+      .header-and-main-container {
+        .header {
+          padding: 15px 15px;
+          .header-section1 {
+            margin: 0 0 15px 0;
+            h2 {
+              font-size: 18px;
+            }
+            h4 {
+              font-size: 14px;
+            }
+          }
+          .header-section2 {
+            flex-direction: column;
+            div {
+              flex-direction: column;
+              font-size: 14px;
+            }
+            span::before {
+              margin: 0 5px 0 0;
+              font-size: 15px;
+            }
+          }
+        }
+        .main {
+          padding: 5px 10px 15px;
+          .search-container {
+            padding: 15px 0;
+            h3 {
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+            .custom-dropdown {
+              width: 200px;
+              .dropdown-btn {
+                padding: 10px;
+                font-size: 14px;
+                p {
+                  width: 100%;
+                  font-size: 14px;
+                  text-align: center;
+                }
+              }
+              .dropdown-btn .arrow {
+                font-size: 16px;
+              }
+              .dropdown-list {
+                .dropdown-item {
+                  padding: 8px;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+
+          .table-container {
+            .responsive-table {
+              width: 100%;
+              font-size: 15px;
+              th,
+              td {
+                padding: 5px 8px;
+                text-align: center;
+              }
+
+              td[data-label="Application Form"] a {
+                padding: 0;
+                height: 100%;
+              }
+            }
+            .responsive-table th:nth-child(1),
+            .responsive-table td:nth-child(1) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(2),
+            .responsive-table td:nth-child(2) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(3),
+            .responsive-table td:nth-child(3) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(4),
+            .responsive-table td:nth-child(4) {
+              width: 95%;
+              text-align: right;
+            }
+
+            .responsive-table th:nth-child(5),
+            .responsive-table td:nth-child(5) {
+              width: 95%;
+              text-align: right;
+            }
+            .responsive-table thead {
+              display: none;
+            }
+
+            .responsive-table tbody {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            }
+
+            .responsive-table tr {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              padding: 10px;
+              background: #fff;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .responsive-table td {
+              display: flex;
+              justify-content: space-between;
+              border: none;
+              padding: 8px 0;
+              text-align: right;
+            }
+
+            .responsive-table td::before {
+              content: attr(data-label);
+              font-weight: bold;
+              flex-basis: 50%;
+              text-align: left;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+
+    .about-container {
+      margin-top: 10px;
+      padding: 10px;
+      .header {
+        padding: 10px;
+        h3 {
+          font-size: 15px;
+        }
+      }
+      .content {
+        padding: 10px;
+        text-align: justify;
+        ul {
+          li {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
