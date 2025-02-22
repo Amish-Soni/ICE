@@ -133,6 +133,10 @@ body {
           }
         }
 
+        .filters {
+          display: none;
+        }
+
         .table-container {
           background-color: #fff;
           .responsive-table {
@@ -347,7 +351,24 @@ body {
             }
           }
 
+          .filters {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            .search-input {
+              padding: 10px 5px;
+              border: 2px solid white;
+              background: transparent;
+              margin: 10px 0;
+            }
+
+            .filter-button {
+              cursor: pointer;
+            }
+          }
+
           .table-container {
+            background-color: transparent;
             .responsive-table {
               width: 100%;
               font-size: 15px;
@@ -526,7 +547,6 @@ body {
               }
 
               td[data-label="Application Form"] a {
-                padding: 0;
                 height: 100%;
               }
             }
