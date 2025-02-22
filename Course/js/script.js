@@ -1,16 +1,9 @@
 document
   .querySelector(".hamburger-menu")
   .addEventListener("click", function () {
-    let tabs = document.querySelectorAll(".tab");
-    if (tabs[0].style.display === "none" || tabs[0].style.display === "") {
-      for (i = 0; i < tabs.length; i++) {
-        tabs[i].style.display = "flex";
-      }
-    } else {
-      for (i = 0; i < tabs.length; i++) {
-        tabs[i].style.display = "none";
-      }
-    }
+    document.querySelectorAll(".tab").forEach((tab) => {
+      tab.classList.toggle("display-tab");
+    });
   });
 
 function showSection(sectionId) {
