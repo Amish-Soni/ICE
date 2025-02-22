@@ -20,6 +20,12 @@ function showSection(sectionId) {
   document
     .querySelector(`.tab[onclick="showSection('${sectionId}')"]`)
     .classList.add("active");
+
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    document.querySelectorAll(".tab").forEach((tab) => {
+      tab.classList.toggle("display-tab");
+    });
+  }
 }
 
 // Show default section
