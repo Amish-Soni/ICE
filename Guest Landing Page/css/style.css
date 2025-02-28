@@ -69,6 +69,17 @@ body {
           font-size: 20px;
           cursor: pointer;
         }
+        .header-login-prompt {
+          a {
+            color: blue;
+          }
+          span::before {
+            content: "\25A0 ";
+            color: #f4b400;
+            margin: 0 10px 0 0;
+            font-size: 25px;
+          }
+        }
       }
       .main {
         padding: 20px 60px 40px;
@@ -258,6 +269,12 @@ body {
               font-size: 23px;
             }
           }
+          .header-login-prompt {
+            font-size: 15px;
+            span::before {
+              font-size: 25px;
+            }
+          }
         }
         .main {
           padding: 10px 20px 30px;
@@ -364,6 +381,14 @@ body {
               font-size: 15px;
             }
           }
+          .header-login-prompt {
+            font-size: 14px;
+            span::before {
+              margin: 0 5px 0 0;
+              font-size: 15px;
+            }
+          }
+
           .hidden {
             display: none;
           }
