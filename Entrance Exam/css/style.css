@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-.course-container {
+/* body {
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+} */
+
+.exam-container {
   font-family: Poppins !important;
   width: 100%;
   margin: 70px auto 0 !important;
@@ -8,22 +15,28 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  min-height: 87vh;
   font-size: 16px;
 }
 
-.course-header {
+.exam-header {
   font-size: 22px;
   font-weight: bold;
   padding: 0px 0;
+  text-align: center;
 }
 
-.course-info {
+.exam-info {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   background: #f1f1f1;
   border-radius: 5px;
+
+  span {
+    font-size: 16px;
+  }
 
   .info-item {
     font-size: 16px;
@@ -36,6 +49,20 @@
     color: #f4b400;
     margin: 0 10px 0 0;
     font-size: 25px;
+  }
+
+  a {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px 0 10px 0;
+  }
+  a:hover {
+    background: #0056b3;
   }
 }
 
@@ -52,7 +79,7 @@
   width: 100%;
 }
 
-.course-tabs {
+.exam-tabs {
   display: flex;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -80,7 +107,7 @@
   }
 }
 
-.course-content {
+.exam-content {
   background: #f8f9fa;
   padding: 20px;
   border-radius: 5px;
@@ -90,11 +117,27 @@
     width: 100%;
   }
 
+  #exam-details {
+    word-wrap: break-word;
+  }
+
+  #eligibility,
+  #application {
+    /* display: flex; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    .section-1,
+    .section-2,
+    .section-3 {
+      width: 50%;
+    }
+  }
+
   .section-title {
     /* text-decoration: underline; */
   }
 
-  .course-table {
+  .exam-table {
     width: 90%;
     border-collapse: separate;
     border-spacing: 0 10px;
@@ -115,17 +158,14 @@
     td {
       background: #e0e0e0;
     }
-  }
 
-  .responsive-course-grid {
-    display: grid;
-    gap: 10px;
-    padding: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    div {
-      background: #e0e0e0;
-      padding: 10px;
-      border: 1px solid #ddd;
+    td a {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 4px;
       text-align: center;
     }
   }
@@ -145,7 +185,7 @@
     text-align: center;
   }
 
-  .responsive-table td[data-label="Application Form"] a {
+  .responsive-table td[data-label="Know More"] a {
     display: inline-block;
     background: #007bff;
     color: white;
@@ -155,19 +195,19 @@
     text-align: center;
   }
 
-  .responsive-table td[data-label="Application Form"] a:hover {
+  .responsive-table td[data-label="Know More"] a:hover {
     background: #0056b3;
   }
 }
 
-.course-notice {
+.exam-notice {
   color: red;
   text-align: center;
   font-size: 14px;
   margin: 10px 0;
 }
 
-.course-faq {
+.exam-faq {
   margin-top: 20px;
 
   .faq-title {
@@ -185,19 +225,23 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .course-container {
+  .exam-container {
     /* width: 90%; */
     /* margin: 15px auto; */
     padding: 15px;
   }
 
-  .course-header {
+  .exam-header {
     font-size: 20px;
     padding: 5px 0;
   }
 
-  .course-info {
+  .exam-info {
     padding: 5px;
+
+    span {
+      font-size: 15px;
+    }
 
     .info-item {
       font-size: 15px;
@@ -213,7 +257,7 @@
     }
   }
 
-  .course-tabs {
+  .exam-tabs {
     display: flex;
     margin-bottom: 15px;
     margin-top: 25px;
@@ -224,10 +268,10 @@
     }
   }
 
-  .course-content {
+  .exam-content {
     padding: 15px;
 
-    .course-table {
+    .exam-table {
       border-spacing: 0 8px;
       margin-bottom: 15px;
       table-layout: fixed;
@@ -242,12 +286,12 @@
     }
   }
 
-  .course-notice {
+  .exam-notice {
     font-size: 13px;
     margin: 8px 0;
   }
 
-  .course-faq {
+  .exam-faq {
     margin-top: 10px;
 
     .faq-title {
@@ -265,22 +309,26 @@
 }
 
 @media screen and (max-width: 768px) {
-  .course-container {
+  .exam-container {
     width: 100%;
-    margin: 70px !important;
+    margin: 70px 0 0 70px !important;
     padding: 10px;
   }
 
-  .course-header {
+  .exam-header {
     font-size: 18px;
     padding: 5px 0;
     text-align: center;
   }
 
-  .course-info {
+  .exam-info {
     padding: 5px;
     flex-direction: column;
     align-items: center;
+
+    span {
+      font-size: 14px;
+    }
 
     .info-item {
       font-size: 14px;
@@ -301,7 +349,7 @@
     display: block;
   }
 
-  .course-tabs {
+  .exam-tabs {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -319,23 +367,32 @@
     }
   }
 
-  .course-content {
+  .exam-content {
     padding: 5px;
     flex-direction: column;
 
     .content-section {
       flex-direction: column;
     }
+    #eligibility,
+    #application {
+      .section-1,
+      .section-2,
+      .section-3 {
+        width: 100%;
+      }
+    }
 
     .section-title {
       font-size: 16px;
     }
 
-    .course-table {
+    .exam-table {
       border-spacing: 0 6px;
       margin-bottom: 10px;
       table-layout: fixed;
       font-size: 14px;
+      width: 100%;
 
       th,
       td {
@@ -379,22 +436,14 @@
       text-align: left;
       color: #333;
     }
-    .responsive-course-grid {
-      grid-template-columns: repeat(2, 1fr);
-
-      div {
-        padding: 8px;
-        font-size: 15px;
-      }
-    }
   }
 
-  .course-notice {
+  .exam-notice {
     font-size: 12px;
     margin: 6px 0;
   }
 
-  .course-faq {
+  .exam-faq {
     margin-top: 8px;
 
     .faq-title {
@@ -413,13 +462,5 @@
 
 @media (max-width: 480px) {
   .content-section {
-    .responsive-course-grid {
-      grid-template-columns: repeat(1, 1fr);
-
-      div {
-        padding: 7px;
-        font-size: 14px;
-      }
-    }
   }
 }

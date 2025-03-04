@@ -1,225 +1,1001 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable" data-bs-theme="light" data-layout-width="fluid"
+    data-layout-position="fixed" data-layout-style="default" data-sidebar-visibility="show">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Course - B.Tech.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Course - B.Tech." name="description">
     <script src="https://kit.fontawesome.com/527e412bd8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="http://103.234.187.37:8089/portal/assets/admin/images/favicon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+
+    <!-- dropzone css -->
+    <link rel="stylesheet" href="http://103.234.187.37:8089/portal/assets/admin/libs/dropzone/dropzone.css"
+        type="text/css">
+
+    <!-- Filepond css -->
+    <link rel="stylesheet" href="http://103.234.187.37:8089/portal/assets/admin/libs/filepond/filepond.min.css"
+        type="text/css">
+    <link rel="stylesheet"
+        href="http://103.234.187.37:8089/portal/assets/admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css">
+
+    <!-- Sweet Alert css-->
+    <link href="http://103.234.187.37:8089/portal/assets/admin/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet"
+        type="text/css">
+
+    <!-- jsvectormap css -->
+    <link href="http://103.234.187.37:8089/portal/assets/admin/libs/jsvectormap/css/jsvectormap.min.css"
+        rel="stylesheet" type="text/css">
+
+    <!--Swiper slider css-->
+    <link href="http://103.234.187.37:8089/portal/assets/admin/libs/swiper/swiper-bundle.min.css" rel="stylesheet"
+        type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Layout config Js -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="http://103.234.187.37:8089/portal/assets/admin/css/bootstrap.min.css?v=time()" rel="stylesheet"
+        type="text/css">
+    <!-- Icons Css -->
+    <link href="http://103.234.187.37:8089/portal/assets/admin/css/icons.min.css?v=time()" rel="stylesheet"
+        type="text/css">
+    <!-- App Css-->
+    <link href="http://103.234.187.37:8089/portal/assets/admin/css/app.min.css?v=time()" rel="stylesheet"
+        type="text/css">
+    <!-- custom Css-->
+    <link href="http://103.234.187.37:8089/portal/assets/admin/css/custom.min.css?v=time()" rel="stylesheet"
+        type="text/css">
+    <link href="http://103.234.187.37:8089/portal/assets/admin/css/custom1.min.css?v=time()" rel="stylesheet"
+        type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="http://103.234.187.37:8089/portal/assets/font/style.css">
+    <link href="http://103.234.187.37:8089/portal/assets/admin/font/style.css" rel="stylesheet" type="text/css">
+    <link href="http://103.234.187.37:8089/portal/assets/admin/css/style.css?v=time()" rel="stylesheet" type="text/css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .notification_inactive {
+            color: red;
+        }
+
+        #carouselExampleControls .card-body {
+            padding: 14px;
+            min-height: 83px;
+        }
+
+        #page-topbar {
+            position: fixed;
+            top: 0;
+            z-index: 10000;
+            right: 0;
+            left: 0;
+            background-color: var(--vz-header-bg);
+            -webkit-transition: all .1s ease-out;
+            transition: all .1s ease-out;
+            border-bottom: 1px solid var(--vz-header-border);
+        }
+
+        #scrollbar .nav-link h5 {
+            font-weight: bold !important;
+        }
+
+        .nav_item_bg {
+            -webkit-box-shadow: 0px 0px 0px 2px #d1d2d3;
+            box-shadow: 0px 0px 0px 2px #d1d2d3;
+            border-color: #d1d2d3 !important;
+            margin-bottom: 8px;
+        }
+
+        .nav_item_align_bottom li.nav-item.nav_item_bg {
+            border: none !important;
+            box-shadow: none;
+        }
+
+        #scrollbar .nav_item_align_bottom li.nav-item.nav_item_bg .nav-link h5 {
+            color: #000 !important;
+            font-style: italic;
+        }
+
+        #scrollbar .nav_item_align_bottom li.nav-item.nav_item_bg:hover {
+            background: none !important;
+        }
+
+        .nav_item_bg:hover {
+            background: none;
+            color: #000;
+        }
+
+        .nav_item_bg:hover a {
+            background: none;
+            color: #000;
+        }
+
+        #scrollbar .nav_item_bg:hover a span h5 {
+            background: none;
+            color: #000 !important;
+        }
+
+        .card-body.p-0.mt-3 li.list-group-item {
+            border-top: 2px solid #e9ebec !important;
+            border: none;
+            border-radius: 0px;
+            padding: 8px 0px;
+        }
+
+        .card-body.p-0.mt-3 li.list-group-item span.px-3 {
+            font-size: 15px;
+            font-style: italic;
+            font-weight: 500;
+            margin: 0 !important;
+            padding: 6px 5px 0px !important;
+        }
+
+        .customDashboardCard {
+            height: inherit;
+        }
+
+        .page-content {
+            padding: calc(70px + 1.5rem) calc(1.5rem* .5) 60px calc(1.5rem* .5);
+            margin-left: 47px;
+        }
+
+        .col-lg-4.right_side_sec {
+            -webkit-box-shadow: 0 0px 10px rgba(56, 65, 74, 0.15);
+            box-shadow: 0 0px 10px rgba(56, 65, 74, 0.15);
+            background: #fff;
+            /*border-radius: 5px; margin: 0 0 0 67px;
+        width: 27%;*/
+        }
+
+        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
+
+            .col-lg-4.right_side_sec {
+                /*margin: 0 0 0 43px !important;
+        width: 27% !important;*/
+            }
+
+            .card-body.p-0.mt-3 li.list-group-item span.px-3 {
+                font-size: 13px !important;
+            }
+
+            .card-body.p-0.mt-3 li.list-group-item span {
+                font-size: 10px !important;
+                padding: 8px 0 !important;
+            }
+
+            .customCard .col-lg-8 .col-lg-5 .col-md-12.d-flex.rounded-3 a {
+                margin: 28px auto 0 !important;
+            }
+
+            .col-md-12.d-flex .card-body p.card-text {
+                padding: 0 10px !important;
+            }
+
+        }
+
+
+        @media only screen and (max-width: 1250px) and (min-width: 992px) {
+
+            .col-lg-4.right_side_sec {
+                /*
+        margin: 0 0 0 43px !important;
+        width: 27% !important;*/
+            }
+
+            .card-body.p-0.mt-3 li.list-group-item span.px-3 {
+                font-size: 12px !important;
+            }
+
+            h5.card-title.c111 {
+                font-size: 17px !important;
+            }
+
+            .card-body.p-0.mt-3 li.list-group-item span {
+                font-size: 10px !important;
+                padding: 7px 0 !important;
+            }
+
+            .customCard .col-lg-8 .col-lg-5 .col-md-12.d-flex.rounded-3 a {
+                margin: 28px auto 0 !important;
+            }
+
+            :is([data-layout=vertical], [data-layout=semibox])[data-sidebar-size=sm] #page-topbar {
+                z-index: none;
+            }
+
+            .col-md-12.d-flex .card-body p.card-text.p111 {
+                padding: 0 7px !important;
+            }
+
+        }
+
+        .navbar-menu .navbar-nav .nav-link {
+            min-height: 0px !important;
+        }
+
+        @media (min-width: 992px) {
+            body .col-lg-4.right_side_sec {
+                width: calc(33.33% - 40px);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .hide {
+                display: none;
+            }
+
+            .left {
+                margin-left: 13px;
+            }
+
+            .dropdown-header {
+                margin-left: 70px;
+            }
+
+            .dropdown-item {
+                margin-left: 70px;
+            }
+        }
+
+        @media (min-width: 1500px) {
+            .hide1 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .bg-pattern {
+                padding-left: 63px;
+            }
+
+            .hide2 {
+                display: none;
+            }
+
+            .logo-sm img {
+                height: 25px !important;
+                margin-left: 10px;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            #page-topbar {
+                z-index: 100000;
+            }
+        }
+
+        .logo-sm img {
+            height: 55px;
+            margin-left: 10px;
+        }
+
+        @media (max-width:767.98px) {
+            .navbar-menu {
+                width: 70px !important;
+            }
+        }
+
+        .user_content1.form-check-input[type=radio] {
+
+            border-radius: 50%;
+
+            width: 13px;
+
+            height: 13px;
+
+            background: #fff;
+
+            margin: 7px;
+
+            border: 1px solid #000;
+
+        }
+
+        .responsive-radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .responsive-radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* Adjusts width to fit two items per row */
+            max-width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .responsive-radio-group label {
+                flex: 1 1 100%;
+                /* Full width on smaller screens */
+            }
+
+            .responsive-radio-group {
+                display: block;
+            }
+        }
+
+
+        .user_content1.form-check-input:checked {
+
+            background-color: #ffbe36;
+
+            border-color: #000;
+
+        }
+
+        .text_area {
+            padding: 0 100px 100px 100px;
+        }
+
+        .text_area1 {
+            padding: 40px;
+        }
+
+        .options {
+            display: flex;
+        }
+
+        @media only screen and (max-width: 940px) {
+            .text_area {
+                padding: 0;
+            }
+
+            .text_area1 {
+                padding: 0;
+            }
+
+            .options {
+                display: block;
+
+            }
+
+            .responsive-radio-group label {
+                flex: 1 1 calc(50% - 10px);
+            }
+
+            .step-arrow-nav .nav {
+                background-color: #e8e8e8;
+                display: inline !important;
+            }
+
+            #dash {
+                margin-right: 5px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="course-container">
-        <div class="course-header">Bachelor of Technology (B.Tech.)</div>
-        <div class="course-info">
-            <span class="info-item">100+ Specializations</span>
-            <span class="info-item">Admissions through 20+ exams</span>
-            <span class="info-item">500+ Institutions</span>
-        </div>
-        <button class="hamburger-menu">☰ Menu</button>
-        <div class="course-tabs">
-            <div class="tab active" onclick="showSection('course-details')">Course Details</div>
-            <div class="tab" onclick="showSection('eligibility')">Eligibility</div>
-            <div class="tab" onclick="showSection('specializations')">Specializations</div>
-            <div class="tab" onclick="showSection('entrance-exams')">Entrance Exam</div>
-            <div class="tab" onclick="showSection('institutions')">Institutions</div>
-        </div>
-        <div class="course-content">
-            <div id="course-details" class="content-section active">
-                <table class="course-table">
-                    <tr>
-                        <th>Type</th>
-                        <td>Degree Program</td>
-                    </tr>
-                    <tr>
-                        <th>Domain</th>
-                        <td>Engineering & Technology</td>
-                    </tr>
-                </table>
-                <table class="course-table">
-                    <tr>
-                        <th>Duration</th>
-                        <td>3 Year / 4 Year</td>
-                    </tr>
-                    <tr>
-                        <th>Exit Option</th>
-                        <td>No</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="eligibility" class="content-section">
-                <div class="section-1">
-                    <h3 class="section-title">Educational Qualifications Required</h3>
-                    <table class="course-table">
-                        <tr>
-                            <th>10+3 Year Diploma</th>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <th>Class 12 Pass</th>
-                            <td>50%</td>
-                        </tr>
-                    </table>
+
+
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <span class="logo-sm hide1">
+                            <img src="http://103.234.187.37:8089/portal/assets/admin/images/riar-pro-logo.png" alt="">
+                        </span>
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="http://103.234.187.37:8089/portal/" class="logo logo-light">
+                                <span class="logo-sm hide1">
+                                    <img src="http://103.234.187.37:8089/portal/assets/admin/images/riar-pro-logo.png"
+                                        alt="" height="22">
+                                </span>
+                                <span class="logo-lg hide1">
+                                    <img src="http://103.234.187.37:8089/portal/assets/admin/images/riar-pro-logo.png"
+                                        alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center">
+
+
+                        <div class="header-item">
+
+
+
+                            <a href="http://103.234.187.37:8089/portal/cart"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-cart fs-22" onclick="get_cart_url();"></i>
+                                <span onclick="get_cart_url();"
+                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger"
+                                    id="not_outer">
+                                    0</span>
+                            </a>
+
+                        </div>
+                        <div class="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
+
+
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle page_header_notifications_dropdown"
+                                id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-bell fs-22"></i>
+                                <span
+                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger"
+                                    id="not_inner">0<span class="visually-hidden">unread messages</span></span>
+                            </button>
+
+
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-notifications-dropdown">
+
+                                <div class="dropdown-head bg-primary bg-pattern rounded-top">
+                                    <div class="p-3">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h6 class="m-0 fs-16 fw-semibold text-white"> Notifications </h6>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="px-2 pt-2">
+                                        <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
+                                            id="notificationItemsTab" role="tablist">
+                                            <li class="nav-item waves-effect waves-light" role="presentation">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
+                                                    role="tab" aria-selected="true" id="out_pop_inner">
+                                                    All ()
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-content position-relative" id="notificationItemsTabContent">
+                                    <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab" role="tabpanel"
+                                        aria-labelledby="out_pop_inner">
+                                        <div data-simplebar="init" style="max-height: 300px;" class="pe-2">
+                                            <div class="simplebar-wrapper" style="margin: 0px -8px 0px 0px;">
+                                                <div class="simplebar-height-auto-observer-wrapper">
+                                                    <div class="simplebar-height-auto-observer"></div>
+                                                </div>
+                                                <div class="simplebar-mask">
+                                                    <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                                        <div class="simplebar-content-wrapper" tabindex="0"
+                                                            role="region" aria-label="scrollable content"
+                                                            style="height: auto; overflow: hidden;">
+                                                            <div class="simplebar-content"
+                                                                style="padding: 0px 8px 0px 0px;">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="simplebar-placeholder" style="width: 0px; height: 0px;">
+                                                </div>
+                                            </div>
+                                            <div class="simplebar-track simplebar-horizontal"
+                                                style="visibility: hidden;">
+                                                <div class="simplebar-scrollbar" style="width: 0px; display: none;">
+                                                </div>
+                                            </div>
+                                            <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
+                                                <div class="simplebar-scrollbar" style="height: 0px; display: none;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="empty-notification-elem">
+                                            <div class="w-25 w-sm-50 pt-3 mx-auto"> <img
+                                                    src="http://103.234.187.37:8089/portal/assets/admin/images/svg/bell.svg"
+                                                    class="img-fluid" alt="user-pic"> </div>
+                                            <div class="text-center pb-5 mt-2">
+                                                <h6 class="fs-18 fw-semibold lh-base">Hey! You dont have any
+                                                    notifications. </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+
+                                    <img class="rounded-circle header-profile-user  ss"
+                                        src="http://103.234.187.37:8089/portal/uploads/Student/3315/Profile/3315_1740759279.PNG"
+                                        alt="Header Avatar">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome, Yatushi garg</h6>
+                                <a class="dropdown-item" href="http://103.234.187.37:8089/portal/student/profile"><i
+                                        style="margin-right: 5px;" class="fa fa-user" aria-hidden="true"></i><span
+                                        class="align-middle">Profile</span></a>
+                                <a class="dropdown-item" href="http://103.234.187.37:8089/portal/logout"><i
+                                        style="margin-right: 5px;" class="fa fa-sign-in" aria-hidden="true"></i><span
+                                        class="align-middle" data-key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="section-2">
-                    <h3 class="section-title">Subjects Required &nbsp; (Any 3)
-                    </h3>
-                    <table class="course-table">
-                        <tr>
-                            <th>Physics</th>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <th>Chemistry</th>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <th>Mathematics</th>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <th>Biology</th>
-                            <td>50%</td>
-                        </tr>
-                    </table>
+            </div>
+        </header>
+
+
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu" style="position:fixed;">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+
+                <!-- Light Logo-->
+                <a href="http://103.234.187.37:8089/portal/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="http://103.234.187.37:8089/portal/assets/admin/images/riar-pro-logo.png" alt=""
+                            height="53" width="150">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="http://103.234.187.37:8089/portal/assets/admin/images/riar-pro-logo.png" alt=""
+                            height="53" width="150">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+
+                    <ul class="navbar-nav pt-0" id="navbar-nav">
+
+                        <div>
+
+
+
+                            <li class="nav-item nav_item_bg   ">
+                                <a class="nav-link menu-link" href="http://103.234.187.37:8089/portal/student">
+                                    <img src="http://103.234.187.37:8089/portal/assets/images/Frame 37.png"
+                                        alt="Card image cap" style="height:28px;weight:28px;">
+                                    <span class="px-3" style="color:#1B2F3;">
+                                        <h5 style="padding-top:7px; font-weight:bold;">Dashboard</h5>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item nav_item_bg  ">
+                                <a class="nav-link menu-link"
+                                    href="http://103.234.187.37:8089/portal/student/list-assessment">
+                                    <img src="http://103.234.187.37:8089/portal/assets/images/Frame 35.png"
+                                        alt="Card image cap" style="height:28px;weight:28px;">
+                                    <span class="px-3" style="color:#1B2F3;">
+                                        <h5 style="padding-top:7px; font-weight:bold;">Assessments and Reports</h5>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item nav_item_bg  ">
+                                <a class="nav-link menu-link" href="http://103.234.187.37:8089/portal/student/calender">
+                                    <img src="http://103.234.187.37:8089/portal/assets/images/Frame 36.png"
+                                        alt="Card image cap" style="height:28px;weight:28px;">
+                                    <span class="px-3" style="color:#1B2F3;">
+                                        <h5 style="padding-top:7px; font-weight:bold;">Calendar</h5>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item nav_item_bg   
+  ">
+                                <a class="nav-link menu-link"
+                                    href="http://103.234.187.37:8089/portal/student/resources">
+                                    <img src="http://103.234.187.37:8089/portal/assets/images/Frame 34.png"
+                                        alt="Card image cap" style="height:28px;weight:28px;">
+                                    <span class="px-3" style="color:#1B2F3;">
+                                        <h5 style="padding-top:7px; font-weight:bold;">Resources</h5>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item nav_item_bg active">
+                                <a class="nav-link menu-link" href="http://103.234.187.37:8089/portal/student/parent">
+                                    <img src="http://103.234.187.37:8089/portal/assets/images/Frame 33.png"
+                                        alt="Card image cap" style="height:28px;weight:28px;">
+                                    <span class="px-3" style="color:#1B2F3;">
+                                        <h5 style="padding-top:7px; font-weight:bold; margin-right:2px;">Request</h5>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item nav_item_bg ">
+                                <a class="nav-link menu-link" href="http://103.234.187.37:8089/portal/landing">
+                                    <img src="http://103.234.187.37:8089/portal/assets/images/Frame 33.png"
+                                        alt="Card image cap" style="height:28px;weight:28px;">
+                                    <span class="px-3" style="color:#1B2F3;">
+                                        <h5 style="padding-top:7px; font-weight:bold; margin-right:2px;">Course</h5>
+                                    </span>
+                                </a>
+                            </li>
+
+
+                            <div class="nav_item_align_bottom">
+
+                                <li class="nav-item nav_item_bg " style="">
+                                    <a style="display:none;" class="nav-link menu-link" href="#">
+                                        <img src="http://103.234.187.37:8089/portal/assets/images/ci_settings-filled.png"
+                                            alt="Card image cap" style="height:28px;weight:28px;">
+                                        <span class="px-3" style="color:#1B2F3;">
+                                            <h5 style="padding-top:7px; font-weight:bold; margin-right:2px;">Settings
+                                            </h5>
+                                        </span>
+                                    </a>
+                                </li>
+
+                            </div>
+
+                        </div>
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+
+
+        </div>
+
+        <script>
+            function get_cart_url() {
+                window.location.href = 'http://103.234.187.37:8089/portal/cart';
+            }
+        </script>
+
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <!-- <div class="page-content"> -->
+            <!-- <div class="container-fluid  pt-2"> -->
+            <div class="course-container">
+                <div class="course-header">Bachelor of Technology (B.Tech.)</div>
+                <div class="course-info">
+                    <span class="info-item">100+ Specializations</span>
+                    <span class="info-item">Admissions through 20+ exams</span>
+                    <span class="info-item">500+ Institutions</span>
+                </div>
+                <button class="hamburger-menu">☰ Menu</button>
+                <div class="course-tabs">
+                    <div class="tab active" onclick="showSection('course-details')">Course Details</div>
+                    <div class="tab" onclick="showSection('eligibility')">Eligibility</div>
+                    <div class="tab" onclick="showSection('specializations')">Specializations</div>
+                    <div class="tab" onclick="showSection('entrance-exams')">Entrance Exam</div>
+                    <div class="tab" onclick="showSection('institutions')">Institutions</div>
+                </div>
+                <div class="course-content">
+                    <div id="course-details" class="content-section active">
+                        <table class="course-table">
+                            <tr>
+                                <th>Type</th>
+                                <td>Degree Program</td>
+                            </tr>
+                            <tr>
+                                <th>Domain</th>
+                                <td>Engineering & Technology</td>
+                            </tr>
+                        </table>
+                        <table class="course-table">
+                            <tr>
+                                <th>Duration</th>
+                                <td>3 Year / 4 Year</td>
+                            </tr>
+                            <tr>
+                                <th>Exit Option</th>
+                                <td>No</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="eligibility" class="content-section">
+                        <div class="section-1">
+                            <h3 class="section-title">Educational Qualifications (Any 1)</h3>
+                            <table class="course-table">
+                                <tr>
+                                    <th>Pathway 1</th>
+                                    <td>10+3 Year Diploma</td>
+                                </tr>
+                                <tr>
+                                    <th>Pathway 2</th>
+                                    <td>Class 12 Pass</td>
+                                </tr>
+                                <tr>
+                                    <th>Pathway 3</th>
+                                    <td>Class 12 Pursuing</td>
+                                </tr>
+                                <tr>
+                                    <th>Minimum Percentage</th>
+                                    <td>No minimum criteria</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="section-2">
+                            <h3 class="section-title">Subjects Required &nbsp; (Any 3)
+                            </h3>
+                            <table class="course-table">
+                                <tr>
+                                    <th>Subject 1</th>
+                                    <td>Physics</td>
+                                </tr>
+                                <tr>
+                                    <th>Subject 2</th>
+                                    <td>Chemistry</td>
+                                </tr>
+                                <tr>
+                                    <th>Subject 3</th>
+                                    <td>Mathematics</td>
+                                </tr>
+                                <tr>
+                                    <th>Subject 4</th>
+                                    <td>Biology</td>
+                                </tr>
+                                <tr>
+                                    <th>Minimum Percentage</th>
+                                    <td>No minimum criteria</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="specializations" class="content-section">
+                        <div class="responsive-course-grid">
+                            <div>Aerospace Engineering</div>
+                            <div>Agricultural Engineering</div>
+                            <div>Artificial Intelligence and Machine Learning</div>
+                            <div>Automobile Engineering</div>
+                            <div>Big Data Analytics</div>
+                            <div>Biomedical Engineering</div>
+                            <div>Biotechnology</div>
+                            <div>Chemical Engineering</div>
+                            <div>Civil Engineering</div>
+                            <div>Civil Engineering (Environmental Engineering)</div>
+                            <div>Civil Engineering (Structural Engineering)</div>
+                            <div>Cloud Computing</div>
+                            <div>Computer Science and Engineering</div>
+                            <div>Computer Science and Engineering (Artificial Intelligence and Machine Learning)
+                            </div>
+                            <div>Computer Science and Engineering (Cybersecurity)</div>
+                            <div>Computer Science and Engineering (Data Science)</div>
+                            <div>Computer Science and Engineering (Internet of Things)</div>
+                            <div>Cybersecurity</div>
+                            <div>Data Science</div>
+                            <div>Electrical and Electronics Engineering</div>
+                            <div>Electrical Engineering</div>
+                            <div>Electrical Engineering (Power Systems)</div>
+                            <div>Electronics and Communication Engineering</div>
+                            <div>Electronics and Communication Engineering (Embedded Systems)</div>
+                            <div>Electronics and Communication Engineering (VLSI Design)</div>
+                            <div>Environmental Engineering</div>
+                            <div>Industrial Engineering</div>
+                            <div>Information Technology</div>
+                            <div>Instrumentation and Control Engineering</div>
+                            <div>Marine Engineering</div>
+                            <div>Mechanical Engineering</div>
+                            <div>Mechanical Engineering (Automotive Engineering)</div>
+                            <div>Mechanical Engineering (Robotics and Automation)</div>
+                            <div>Metallurgical Engineering</div>
+                            <div>Mining Engineering</div>
+                            <div>Nanotechnology</div>
+                            <div>Petroleum Engineering</div>
+                            <div>Power Systems Engineering</div>
+                            <div>Production Engineering</div>
+                            <div>Robotics Engineering</div>
+                            <div>Software Engineering</div>
+                            <div>Structural Engineering</div>
+                            <div>Telecommunication Engineering</div>
+                            <div>Textile Engineering</div>
+                        </div>
+                    </div>
+                    <div id="entrance-exams" class="content-section">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Name &nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass"
+                                            style="color: #1a2f3f;"></i>
+                                    </th>
+                                    <th>Test Mode &nbsp;&nbsp;
+                                        <i class="fa-solid fa-filter" style="color: #1a2f3f;"></i>
+                                    </th>
+                                    <th>Level &nbsp;&nbsp;
+                                        <i class="fa-solid fa-filter" style="color: #1a2f3f;"></i>
+                                    </th>
+                                    <th>Application End Date</th>
+                                    <th>Application Form</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
+                                    <td data-label="Test Mode">Computer Based Test</td>
+                                    <td data-label="Level">National</td>
+                                    <td data-label="Application End Date">25 February, 2025</td>
+                                    <td data-label="Application Form"><a href="#" target="_blank
+                                        ">Apply</a></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
+                                    <td data-label="Test Mode">Computer Based Test</td>
+                                    <td data-label="Level">National</td>
+                                    <td data-label="Application End Date">25 February, 2025</td>
+                                    <td data-label="Application Form"><a href="#" target="_blank
+                                        ">Apply</a></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
+                                    <td data-label="Test Mode">Computer Based Test</td>
+                                    <td data-label="Level">National</td>
+                                    <td data-label="Application End Date">25 February, 2025</td>
+                                    <td data-label="Application Form"><a href="#" target="_blank
+                                        ">Apply</a></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
+                                    <td data-label="Test Mode">Computer Based Test</td>
+                                    <td data-label="Level">National</td>
+                                    <td data-label="Application End Date">25 February, 2025</td>
+                                    <td data-label="Application Form"><a href="#" target="_blank
+                                        ">Apply</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="institutions" class="content-section">
+                        <h2>Coming Soon...</h2>
+                    </div>
+                </div>
+                <div class="course-notice">Note: This information is sourced from standard resources and may
+                    vary.</div>
+                <div class="course-faq">
+                    <ul class="faq-list">
+                        <li class="faq-item"><strong>What is the B.Tech.?</strong>
+                            <p>Bachelor of Technology, a UG-level professional engineering
+                                degree course with a duration of 4 years. B Tech is a field
+                                related to computers and technology that includes a detailed study of
+                                programming and computer
+                                software applications.
+                                BTech courses provide the students with excellent theoretical knowledge and
+                                practical
+                                skill-based
+                                training. Since the B
+                                Tech course is more engineering and technology centric, the
+                                focus is on application
+                                and skill-based study, making industrial visits and internships an important
+                                aspect of the BTech
+                                courses.</p>
+                        </li>
+                        <li class="faq-item"><strong>Why study B.Tech. course?</strong>
+                            <p>While there are a lot of specializations that extend bright future prospects for
+                                BTech graduates
+                                after pursuing B Tech
+                                to get into different careers, Computer Science Engineering is probably one of
+                                the most
+                                sought-after
+                                courses at present.
+                                This is also reflected in the high cut-off entrance exam marks that top
+                                engineering colleges
+                                including the Indian
+                                Institutes of Technology (IITs), the Indian Institute of Information Technology
+                                (IIITs), and the
+                                National Institutes of
+                                Technology (NITs) as well as some of the best central universities demand from
+                                the aspirants in
+                                order to enroll them for
+                                B Tech CSE course. All in all, the BTech degree promises decent earning
+                                opportunities for fresh
+                                graduates.</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div id="specializations" class="content-section">
-                <div class="responsive-course-grid">
-                    <div>Aerospace Engineering</div>
-                    <div>Agricultural Engineering</div>
-                    <div>Artificial Intelligence and Machine Learning</div>
-                    <div>Automobile Engineering</div>
-                    <div>Big Data Analytics</div>
-                    <div>Biomedical Engineering</div>
-                    <div>Biotechnology</div>
-                    <div>Chemical Engineering</div>
-                    <div>Civil Engineering</div>
-                    <div>Civil Engineering (Environmental Engineering)</div>
-                    <div>Civil Engineering (Structural Engineering)</div>
-                    <div>Cloud Computing</div>
-                    <div>Computer Science and Engineering</div>
-                    <div>Computer Science and Engineering (Artificial Intelligence and Machine Learning)</div>
-                    <div>Computer Science and Engineering (Cybersecurity)</div>
-                    <div>Computer Science and Engineering (Data Science)</div>
-                    <div>Computer Science and Engineering (Internet of Things)</div>
-                    <div>Cybersecurity</div>
-                    <div>Data Science</div>
-                    <div>Electrical and Electronics Engineering</div>
-                    <div>Electrical Engineering</div>
-                    <div>Electrical Engineering (Power Systems)</div>
-                    <div>Electronics and Communication Engineering</div>
-                    <div>Electronics and Communication Engineering (Embedded Systems)</div>
-                    <div>Electronics and Communication Engineering (VLSI Design)</div>
-                    <div>Environmental Engineering</div>
-                    <div>Industrial Engineering</div>
-                    <div>Information Technology</div>
-                    <div>Instrumentation and Control Engineering</div>
-                    <div>Marine Engineering</div>
-                    <div>Mechanical Engineering</div>
-                    <div>Mechanical Engineering (Automotive Engineering)</div>
-                    <div>Mechanical Engineering (Robotics and Automation)</div>
-                    <div>Metallurgical Engineering</div>
-                    <div>Mining Engineering</div>
-                    <div>Nanotechnology</div>
-                    <div>Petroleum Engineering</div>
-                    <div>Power Systems Engineering</div>
-                    <div>Production Engineering</div>
-                    <div>Robotics Engineering</div>
-                    <div>Software Engineering</div>
-                    <div>Structural Engineering</div>
-                    <div>Telecommunication Engineering</div>
-                    <div>Textile Engineering</div>
-                </div>
-            </div>
-            <div id="entrance-exams" class="content-section">
-                <table class="responsive-table">
-                    <thead>
-                        <tr>
-                            <th>Name &nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass" style="color: #1a2f3f;"></i>
-                            </th>
-                            <th>Test Mode &nbsp;&nbsp;
-                                <i class="fa-solid fa-filter" style="color: #1a2f3f;"></i>
-                            </th>
-                            <th>Level &nbsp;&nbsp;
-                                <i class="fa-solid fa-filter" style="color: #1a2f3f;"></i>
-                            </th>
-                            <th>Application End Date</th>
-                            <th>Application Form</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
-                            <td data-label="Test Mode">Computer Based Test</td>
-                            <td data-label="Level">National</td>
-                            <td data-label="Application End Date">25 February, 2025</td>
-                            <td data-label="Application Form"><a href="#">Apply</a></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
-                            <td data-label="Test Mode">Computer Based Test</td>
-                            <td data-label="Level">National</td>
-                            <td data-label="Application End Date">25 February, 2025</td>
-                            <td data-label="Application Form"><a href="#">Apply</a></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
-                            <td data-label="Test Mode">Computer Based Test</td>
-                            <td data-label="Level">National</td>
-                            <td data-label="Application End Date">25 February, 2025</td>
-                            <td data-label="Application Form"><a href="#">Apply</a></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Name">Joint Entrance Exam Mains (JEE Mains)</td>
-                            <td data-label="Test Mode">Computer Based Test</td>
-                            <td data-label="Level">National</td>
-                            <td data-label="Application End Date">25 February, 2025</td>
-                            <td data-label="Application Form"><a href="#">Apply</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="institutions" class="content-section">
-                <h2>Coming Soon...</h2>
-            </div>
+
+
+            <!-- </div> end col -->
+
+
+            <!-- </div> -->
+
         </div>
-        <div class="course-notice">Note: This information is sourced from standard resources and may vary.</div>
-        <div class="course-faq">
-            <ul class="faq-list">
-                <li class="faq-item"><strong>What is the B.Tech.?</strong>
-                    <p>Bachelor of Technology, a UG-level professional engineering
-                        degree course with a duration of 4 years. B Tech is a field
-                        related to computers and technology that includes a detailed study of programming and computer
-                        software applications.
-                        BTech courses provide the students with excellent theoretical knowledge and practical
-                        skill-based
-                        training. Since the B
-                        Tech course is more engineering and technology centric, the
-                        focus is on application
-                        and skill-based study, making industrial visits and internships an important aspect of the BTech
-                        courses.</p>
-                </li>
-                <li class="faq-item"><strong>Why study B.Tech. course?</strong>
-                    <p>While there are a lot of specializations that extend bright future prospects for BTech graduates
-                        after pursuing B Tech
-                        to get into different careers, Computer Science Engineering is probably one of the most
-                        sought-after
-                        courses at present.
-                        This is also reflected in the high cut-off entrance exam marks that top engineering colleges
-                        including the Indian
-                        Institutes of Technology (IITs), the Indian Institute of Information Technology (IIITs), and the
-                        National Institutes of
-                        Technology (NITs) as well as some of the best central universities demand from the aspirants in
-                        order to enroll them for
-                        B Tech CSE course. All in all, the BTech degree promises decent earning opportunities for fresh
-                        graduates.</p>
-                </li>
-            </ul>
-        </div>
+
+
     </div>
     <script src="js/script.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/simplebar/simplebar.min.js"></script>
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/node-waves/waves.min.js"></script>
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/feather-icons/feather.min.js"></script>
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/plugins.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript"></script>
+    <script type="text/javascript"></script>
+
+
+    <!-- dropzone min -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/dropzone/dropzone-min.js"></script>
+    <!-- filepond js -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/filepond/filepond.min.js"></script>
+    <script
+        src="http://103.234.187.37:8089/portal/assets/admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+    <script
+        src="http://103.234.187.37:8089/portal/assets/admin/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
+    <script
+        src="http://103.234.187.37:8089/portal/assets/admin/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script
+        src="http://103.234.187.37:8089/portal/assets/admin/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
+
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/pages/form-file-upload.init.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/sweetalert2/sweetalert2.min.js"></script>
+
+    <!-- Sweet alert init js-->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/pages/sweetalerts.init.js"></script>
+
+    <!-- apexcharts -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Vector map-->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/pages/dashboard-ecommerce.init.js"></script>
+
+    <!-- App js -->
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/app.js"></script>
+
+    <script src="http://103.234.187.37:8089/portal/assets/js/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="http://103.234.187.37:8089/portal/assets/admin/js/admin_js/page.js"></script>
+
+
+    <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"
+        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
+        style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
+        <defs id="SvgjsDefs1002"></defs>
+        <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
+        <path id="SvgjsPath1004" d="M0 0 "></path>
+    </svg>
+</body>
+
+<body>
+
 </body>
 
 </html>
